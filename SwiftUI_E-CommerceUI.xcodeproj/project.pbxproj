@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		FF2CB5972AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */; };
 		FF2CB5992AC31AAD007DAC1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5982AC31AAD007DAC1F /* ContentView.swift */; };
-		FF2CB59B2AC31AAE007DAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB59A2AC31AAE007DAC1F /* Assets.xcassets */; };
 		FF2CB59F2AC31AAE007DAC1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */; };
+		FF2CB5A62AC31AF6007DAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF2CB5932AC31AAD007DAC1F /* SwiftUI_E-CommerceUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI_E-CommerceUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_E_CommerceUIApp.swift; sourceTree = "<group>"; };
 		FF2CB5982AC31AAD007DAC1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FF2CB59A2AC31AAE007DAC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF2CB59C2AC31AAE007DAC1F /* SwiftUI_E_CommerceUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_E_CommerceUI.entitlements; sourceTree = "<group>"; };
 		FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			children = (
 				FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */,
 				FF2CB5982AC31AAD007DAC1F /* ContentView.swift */,
-				FF2CB59A2AC31AAE007DAC1F /* Assets.xcassets */,
+				FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */,
 				FF2CB59C2AC31AAE007DAC1F /* SwiftUI_E_CommerceUI.entitlements */,
 				FF2CB59D2AC31AAE007DAC1F /* Preview Content */,
 			);
@@ -127,8 +127,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2CB5A62AC31AF6007DAC1F /* Assets.xcassets in Resources */,
 				FF2CB59F2AC31AAE007DAC1F /* Preview Assets.xcassets in Resources */,
-				FF2CB59B2AC31AAE007DAC1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
