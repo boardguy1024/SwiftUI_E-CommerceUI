@@ -11,6 +11,9 @@
 		FF2CB5992AC31AAD007DAC1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5982AC31AAD007DAC1F /* ContentView.swift */; };
 		FF2CB59F2AC31AAE007DAC1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */; };
 		FF2CB5A62AC31AF6007DAC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */; };
+		FF2CB5AB2AC31C2A007DAC1F /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A82AC31C29007DAC1F /* Raleway-SemiBold.ttf */; };
+		FF2CB5AC2AC31C2A007DAC1F /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A92AC31C2A007DAC1F /* Raleway-Bold.ttf */; };
+		FF2CB5AD2AC31C2A007DAC1F /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5AA2AC31C2A007DAC1F /* Raleway-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		FF2CB59C2AC31AAE007DAC1F /* SwiftUI_E_CommerceUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_E_CommerceUI.entitlements; sourceTree = "<group>"; };
 		FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF2CB5A82AC31C29007DAC1F /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		FF2CB5A92AC31C2A007DAC1F /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		FF2CB5AA2AC31C2A007DAC1F /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		FF2CB5AE2AC31C72007DAC1F /* SwiftUI-E-CommerceUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-E-CommerceUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 		FF2CB58A2AC31AAD007DAC1F = {
 			isa = PBXGroup;
 			children = (
+				FF2CB5A72AC31C13007DAC1F /* Fonts */,
 				FF2CB5952AC31AAD007DAC1F /* SwiftUI_E-CommerceUI */,
 				FF2CB5942AC31AAD007DAC1F /* Products */,
 			);
@@ -52,6 +60,7 @@
 		FF2CB5952AC31AAD007DAC1F /* SwiftUI_E-CommerceUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF2CB5AE2AC31C72007DAC1F /* SwiftUI-E-CommerceUI-Info.plist */,
 				FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */,
 				FF2CB5982AC31AAD007DAC1F /* ContentView.swift */,
 				FF2CB5A52AC31AF6007DAC1F /* Assets.xcassets */,
@@ -67,6 +76,16 @@
 				FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF2CB5A72AC31C13007DAC1F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF2CB5A92AC31C2A007DAC1F /* Raleway-Bold.ttf */,
+				FF2CB5AA2AC31C2A007DAC1F /* Raleway-Regular.ttf */,
+				FF2CB5A82AC31C29007DAC1F /* Raleway-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,8 +146,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2CB5AB2AC31C2A007DAC1F /* Raleway-SemiBold.ttf in Resources */,
+				FF2CB5AD2AC31C2A007DAC1F /* Raleway-Regular.ttf in Resources */,
 				FF2CB5A62AC31AF6007DAC1F /* Assets.xcassets in Resources */,
 				FF2CB59F2AC31AAE007DAC1F /* Preview Assets.xcassets in Resources */,
+				FF2CB5AC2AC31C2A007DAC1F /* Raleway-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +296,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-E-CommerceUI-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +335,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-E-CommerceUI-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
