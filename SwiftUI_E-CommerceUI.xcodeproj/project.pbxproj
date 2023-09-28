@@ -14,6 +14,10 @@
 		FF2CB5AB2AC31C2A007DAC1F /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A82AC31C29007DAC1F /* Raleway-SemiBold.ttf */; };
 		FF2CB5AC2AC31C2A007DAC1F /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5A92AC31C2A007DAC1F /* Raleway-Bold.ttf */; };
 		FF2CB5AD2AC31C2A007DAC1F /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB5AA2AC31C2A007DAC1F /* Raleway-Regular.ttf */; };
+		FF2CB5B12AC31D13007DAC1F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5B02AC31D13007DAC1F /* OnboardingPage.swift */; };
+		FF2CB5B32AC32009007DAC1F /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5B22AC32009007DAC1F /* LoginPage.swift */; };
+		FF2CB5B62AC32025007DAC1F /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5B52AC32025007DAC1F /* LoginPageViewModel.swift */; };
+		FF2CB5B82AC419F6007DAC1F /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5B72AC419F6007DAC1F /* CustomCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		FF2CB5A92AC31C2A007DAC1F /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		FF2CB5AA2AC31C2A007DAC1F /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		FF2CB5AE2AC31C72007DAC1F /* SwiftUI-E-CommerceUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-E-CommerceUI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FF2CB5B02AC31D13007DAC1F /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		FF2CB5B22AC32009007DAC1F /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		FF2CB5B52AC32025007DAC1F /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		FF2CB5B72AC419F6007DAC1F /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 		FF2CB5952AC31AAD007DAC1F /* SwiftUI_E-CommerceUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF2CB5B42AC32015007DAC1F /* ViewModel */,
+				FF2CB5AF2AC31D02007DAC1F /* View */,
 				FF2CB5AE2AC31C72007DAC1F /* SwiftUI-E-CommerceUI-Info.plist */,
 				FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */,
 				FF2CB5982AC31AAD007DAC1F /* ContentView.swift */,
@@ -86,6 +96,24 @@
 				FF2CB5A82AC31C29007DAC1F /* Raleway-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FF2CB5AF2AC31D02007DAC1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF2CB5B02AC31D13007DAC1F /* OnboardingPage.swift */,
+				FF2CB5B22AC32009007DAC1F /* LoginPage.swift */,
+				FF2CB5B72AC419F6007DAC1F /* CustomCorner.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF2CB5B42AC32015007DAC1F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF2CB5B52AC32025007DAC1F /* LoginPageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2CB5B32AC32009007DAC1F /* LoginPage.swift in Sources */,
 				FF2CB5992AC31AAD007DAC1F /* ContentView.swift in Sources */,
 				FF2CB5972AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift in Sources */,
+				FF2CB5B82AC419F6007DAC1F /* CustomCorner.swift in Sources */,
+				FF2CB5B62AC32025007DAC1F /* LoginPageViewModel.swift in Sources */,
+				FF2CB5B12AC31D13007DAC1F /* OnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
