@@ -185,8 +185,7 @@ struct LoginPage: View {
     @ViewBuilder
     func SubmitButton(with title: String) -> some View {
         Button {
-            loginViewModel.forgotPassword()
-
+            loginViewModel.login()
         } label: {
             Text(title)
                 .font(.custom(customFont, size: 17).bold())

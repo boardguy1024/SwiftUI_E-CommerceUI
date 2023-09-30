@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // login-out status
+    @AppStorage("log_status") var log_status = false
+    
     var body: some View {
-        OnboardingPage()
+        Group {
+            if log_status {
+                MainPage()
+            } else {
+                OnboardingPage()
+            }
+        }
     }
 }
 

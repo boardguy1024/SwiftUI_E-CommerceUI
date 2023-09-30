@@ -5,7 +5,7 @@
 //  Created by パクギョンソク on 2023/09/26.
 //
 
-import Foundation
+import SwiftUI
 
 class LoginPageViewModel: ObservableObject {
     
@@ -20,12 +20,14 @@ class LoginPageViewModel: ObservableObject {
     
     @Published var isRegisterUserMode: Bool = false
 
+    @AppStorage("log_status") var log_status = false
+
     func login() {
-        
+        log_status = true
     }
     
     func register() {
-        
+        log_status = true
     }
     
     func forgotPassword() {

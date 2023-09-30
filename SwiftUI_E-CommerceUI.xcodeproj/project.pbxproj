@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF072B0C2AC5DBA4008C9D3F /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF072B0B2AC5DBA4008C9D3F /* MainPage.swift */; };
+		FF072B0F2AC5DF1C008C9D3F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF072B0E2AC5DF1C008C9D3F /* Home.swift */; };
+		FF072B122AC5E1D6008C9D3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF072B112AC5E1D6008C9D3F /* Product.swift */; };
+		FF072B142AC5E333008C9D3F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF072B132AC5E333008C9D3F /* HomeViewModel.swift */; };
+		FF072B162AC6D4A0008C9D3F /* MoreProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF072B152AC6D4A0008C9D3F /* MoreProductsView.swift */; };
 		FF2CB5972AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */; };
 		FF2CB5992AC31AAD007DAC1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2CB5982AC31AAD007DAC1F /* ContentView.swift */; };
 		FF2CB59F2AC31AAE007DAC1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CB59E2AC31AAE007DAC1F /* Preview Assets.xcassets */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF072B0B2AC5DBA4008C9D3F /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		FF072B0E2AC5DF1C008C9D3F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FF072B112AC5E1D6008C9D3F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FF072B132AC5E333008C9D3F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FF072B152AC6D4A0008C9D3F /* MoreProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProductsView.swift; sourceTree = "<group>"; };
 		FF2CB5932AC31AAD007DAC1F /* SwiftUI_E-CommerceUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI_E-CommerceUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CB5962AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_E_CommerceUIApp.swift; sourceTree = "<group>"; };
 		FF2CB5982AC31AAD007DAC1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF072B102AC5E1C4008C9D3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF072B112AC5E1D6008C9D3F /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FF2CB58A2AC31AAD007DAC1F = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +86,7 @@
 		FF2CB5952AC31AAD007DAC1F /* SwiftUI_E-CommerceUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF072B102AC5E1C4008C9D3F /* Model */,
 				FF2CB5B42AC32015007DAC1F /* ViewModel */,
 				FF2CB5AF2AC31D02007DAC1F /* View */,
 				FF2CB5AE2AC31C72007DAC1F /* SwiftUI-E-CommerceUI-Info.plist */,
@@ -104,6 +123,9 @@
 				FF2CB5B02AC31D13007DAC1F /* OnboardingPage.swift */,
 				FF2CB5B22AC32009007DAC1F /* LoginPage.swift */,
 				FF2CB5B72AC419F6007DAC1F /* CustomCorner.swift */,
+				FF072B0B2AC5DBA4008C9D3F /* MainPage.swift */,
+				FF072B0E2AC5DF1C008C9D3F /* Home.swift */,
+				FF072B152AC6D4A0008C9D3F /* MoreProductsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2CB5B52AC32025007DAC1F /* LoginPageViewModel.swift */,
+				FF072B132AC5E333008C9D3F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,10 +213,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF2CB5B32AC32009007DAC1F /* LoginPage.swift in Sources */,
+				FF072B162AC6D4A0008C9D3F /* MoreProductsView.swift in Sources */,
+				FF072B0C2AC5DBA4008C9D3F /* MainPage.swift in Sources */,
+				FF072B122AC5E1D6008C9D3F /* Product.swift in Sources */,
+				FF072B142AC5E333008C9D3F /* HomeViewModel.swift in Sources */,
 				FF2CB5992AC31AAD007DAC1F /* ContentView.swift in Sources */,
 				FF2CB5972AC31AAD007DAC1F /* SwiftUI_E_CommerceUIApp.swift in Sources */,
 				FF2CB5B82AC419F6007DAC1F /* CustomCorner.swift in Sources */,
 				FF2CB5B62AC32025007DAC1F /* LoginPageViewModel.swift in Sources */,
+				FF072B0F2AC5DF1C008C9D3F /* Home.swift in Sources */,
 				FF2CB5B12AC31D13007DAC1F /* OnboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
