@@ -19,22 +19,22 @@ struct Home: View {
             VStack(spacing: 15) {
                 
                 // Search Bar
-                HStack(spacing: 15) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.title)
-                        .foregroundColor(.gray)
-                    
-                    TextField("Search", text: .constant(""))
+                ZStack {
+                    if viewModel.searchActivate {
+                        SearchBar()
+                    } else {
+                        SearchBar()
+                            .matchedGeometryEffect(id: "SEARCHBAR", in: animation)
+                    }
                 }
-                .padding(.vertical, 12)
-                .padding(.horizontal)
-                .background(
-                    Capsule()
-                        .strokeBorder(Color.gray, lineWidth: 1)
-                )
                 .frame(width: getRect().width / 1.6)
                 .padding(.horizontal, 25)
-                
+                .onTapGesture {
+                    withAnimation {
+                        viewModel.searchActivate = true
+                    }
+                }
+    
                 Text("Order online\ncollect in store")
                     .font(.custom(customFont, size: 28).bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -88,6 +88,14 @@ struct Home: View {
         .sheet(isPresented: $viewModel.showMoreProducts, content: {
             MoreProductsView()
         })
+        .overlay(
+            ZStack {
+                if viewModel.searchActivate {
+                    SearchView(animation: self.animation)
+                        .environmentObject(self.viewModel)
+                }
+            }
+        )
     }
     
     @ViewBuilder
@@ -125,6 +133,27 @@ struct Home: View {
         )
         // 画像を上半分表示するため (+80する必要がある)
         .padding(.top, 80)
+    }
+    
+    @ViewBuilder
+    func SearchBar() -> some View {
+        HStack(spacing: 15) {
+            Image(systemName: "magnifyingglass")
+                .font(.title)
+                .foregroundColor(.gray)
+            
+            TextField("Search", text: .constant(""))
+                // TextFiled.desabledした状態で onTapGestureを反応させる方法
+                .background(Color("HomeBG"))
+                .disabled(true)
+        }
+        .padding(.vertical, 12)
+        .padding(.horizontal)
+        .overlay(
+            Capsule()
+                .strokeBorder(Color.gray, lineWidth: 1)
+        )
+        
     }
     
     @ViewBuilder

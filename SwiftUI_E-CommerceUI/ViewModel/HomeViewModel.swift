@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class HomeViewModel: ObservableObject {
     
@@ -33,8 +34,30 @@ class HomeViewModel: ObservableObject {
         Product(type: .tablets, title: "iMac", subtitle: "M1 - Purple", price: "$1599", productImage: "iMac"),
     ]
     
+    @Published var searchText: String = ""
+    @Published var searchActivate: Bool = false
+    @Published var searchedProducts: [Product]?
+    
+    var searchCancellable: AnyCancellable?
+    
     init() {
         filterProductByType()
+        
+        bind()
+    }
+    
+    private func bind() {
+        
+        searchCancellable = $searchText.removeDuplicates()
+             // 最後の入力後、0.5秒にtrigger (ここでは連打防止、ProgressViewを表示する目的でもある)
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink(receiveValue: { text in
+                if text != "" {
+                    self.filterProductBySearch()
+                } else {
+                    self.searchedProducts = nil
+                }
+            })
     }
     
     // currentProductType選択でfilteringされて [filteredProducts]に格納される
@@ -51,6 +74,23 @@ class HomeViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 self?.filteredProducts = result.compactMap { $0 }
 
+            }
+        }
+    }
+    
+    func filterProductBySearch() {
+        
+        // ユーザーの入力に対してインタラクティブ(即時）に実行 - これを使うことで固まって見える現象を改善
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            guard let self = self else { return }
+            let result = self.products.lazy
+                .filter { product in
+                    return product.title.lowercased().contains(self.searchText.lowercased())
+                }
+            
+            // 画面描画のためにメインスレッドで実行
+            DispatchQueue.main.async { [weak self] in
+                self?.searchedProducts = result.compactMap { $0 }
             }
         }
     }
