@@ -9,8 +9,10 @@ import SwiftUI
 
 struct Home: View {
     
-    @Namespace var animation
+    var animation: Namespace.ID
     @StateObject var viewModel = HomeViewModel()
+    
+    @EnvironmentObject var shareData: SharedDataModel
     
     var body: some View {
         
@@ -57,6 +59,13 @@ struct Home: View {
                     HStack(spacing: 25) {
                         ForEach(viewModel.filteredProducts) { product in
                             ProductCardView(product: product)
+                                .onTapGesture {
+                                    withAnimation {
+                                        shareData.detailProduct = product
+                                        shareData.showDetailProduct = true
+                                    }
+                                   
+                                }
                         }
                     }
                     .padding(.horizontal, 25)
@@ -104,6 +113,7 @@ struct Home: View {
             Image(product.productImage)
                 .resizable()
                 .scaledToFit()
+                .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
                 .frame(width: getRect().width / 2.5, height: getRect().width / 2.5)
                 
                 // 画像を上半分表示するため (-80分 .topPadding +80する必要がある)
@@ -184,5 +194,5 @@ struct Home: View {
 }
 
 #Preview {
-    Home()
+    ContentView()
 }

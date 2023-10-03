@@ -144,5 +144,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    Home()
+    ContentView()
 }

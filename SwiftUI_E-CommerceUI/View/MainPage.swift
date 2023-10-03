@@ -17,6 +17,10 @@ struct MainPage: View {
     
     @State private var currentTab: TabType = .home
     
+    @StateObject var sharedData: SharedDataModel = SharedDataModel()
+    
+    @Namespace var animation
+    
     init() {
         // BottomにカスタムTabBarを設けるため、既存のものは非表示させる
         UITabBar.appearance().isHidden = true
@@ -27,7 +31,8 @@ struct MainPage: View {
         VStack {
             TabView(selection: $currentTab,
                     content:  {
-                Home()
+                Home(animation: animation)
+                    .environmentObject(sharedData)
                     .tag(TabType.home)
                 
                 Text("Liked")
@@ -61,7 +66,18 @@ struct MainPage: View {
             .padding(.bottom)
         }
         .background(Color("HomeBG"))
-       
+        .overlay(
+            
+            ZStack {
+                // Show Detail Page
+                if let product = sharedData.detailProduct, sharedData.showDetailProduct {
+                    
+                    ProductDetailView(product: product, animation: self.animation)
+                        .environmentObject(self.sharedData)
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
+                }
+            }
+        )
     }
 }
 
