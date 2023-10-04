@@ -10,8 +10,8 @@ import SwiftUI
 enum TabType: String, CaseIterable {
     case home = "Home"
     case liked = "Liked"
-    case profile = "Profile"
     case cart = "Cart"
+    case profile = "Profile"
 }
 struct MainPage: View {
     
@@ -35,14 +35,16 @@ struct MainPage: View {
                     .environmentObject(sharedData)
                     .tag(TabType.home)
                 
-                Text("Liked")
+                LikedPage()
+                    .environmentObject(sharedData)
                     .tag(TabType.liked)
+                
+                CartPage()
+                    .environmentObject(sharedData)
+                    .tag(TabType.cart)
                 
                 ProfilePage()
                     .tag(TabType.profile)
-                
-                Text("Cart")
-                    .tag(TabType.cart)
             })
             
             // CustomTabBar

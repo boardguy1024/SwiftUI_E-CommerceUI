@@ -26,7 +26,7 @@ struct ProductDetailView: View {
                 HStack {
                     Button {
                         // 詳細画面を閉じる
-                        withAnimation {
+                        withAnimation(.easeInOut) {
                             sharedDataModel.showDetailProduct = false
                         }
                     } label: {
@@ -38,14 +38,14 @@ struct ProductDetailView: View {
                     Spacer()
                     
                     Button {
-                        
+                        addToLiked()
                     } label: {
                         Image("Liked")
                             .resizable()
                             .renderingMode(.template)
                             .scaledToFit()
                             .frame(width: 22, height: 22)
-                            .foregroundColor(.black.opacity(0.7))
+                            .foregroundColor(isLiked ? .red : .black.opacity(0.7))
                         
                     }
                 }
@@ -55,7 +55,7 @@ struct ProductDetailView: View {
                 Image(product.productImage)
                     .resizable()
                     .scaledToFit()
-                    .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
+                    .matchedGeometryEffect(id: "\(product.id)\(sharedDataModel.fromSearchPage ? "SEARCH" : "IMAGE")", in: animation)
                     .padding(.horizontal)
                     .offset(y: -12)
                     .frame(maxHeight: .infinity)
@@ -81,7 +81,7 @@ struct ProductDetailView: View {
                     Text("Available when you purchase any new iPhone, iPad, Mac or Apple TV, $5/month after free trial.")
                         .font(.custom(customFont, size: 15))
                         .foregroundColor(.gray)
-
+                    
                     Button {
                         
                     } label: {
@@ -108,10 +108,10 @@ struct ProductDetailView: View {
                     
                     // Add Button
                     Button {
-                        
+                        addToCart()
                     } label: {
-                        Text("add to basket")
-                            .font(.custom(customFont, size: 10).bold())
+                        Text("\(isAddedToCart ? "Added" : "Add") to Cart")
+                            .font(.custom(customFont, size: 18).bold())
                             .foregroundColor(.white)
                             .padding(.vertical, 20)
                             .frame(maxWidth: .infinity)
@@ -121,7 +121,7 @@ struct ProductDetailView: View {
                                     .shadow(color: .black.opacity(0.2), radius: 10)
                             )
                     }
-
+                    
                 })
                 .padding([.horizontal, .bottom, .top], 25)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -137,6 +137,33 @@ struct ProductDetailView: View {
             Color("HomeBG")
                 .ignoresSafeArea()
         )
+    }
+    
+    var isLiked: Bool {
+        return sharedDataModel.likedProducts.contains { $0.id == product.id }
+    }
+    
+    var isAddedToCart: Bool {
+        return sharedDataModel.cartProducts.contains { $0.id == product.id }
+    }
+    
+    func addToLiked() {
+        
+        if let index = sharedDataModel.likedProducts.firstIndex(where: { $0.id == product.id }) {
+            // likedにproductがある場合には削除
+            sharedDataModel.likedProducts.remove(at: index)
+        } else {
+            // likedに追加
+            sharedDataModel.likedProducts.append(product)
+        }
+    }
+    
+    func addToCart() {
+        if let index = sharedDataModel.cartProducts.firstIndex(where: { $0.id == product.id }) {
+            sharedDataModel.cartProducts.remove(at: index)
+        } else {
+            sharedDataModel.cartProducts.append(product)
+        }
     }
 }
 

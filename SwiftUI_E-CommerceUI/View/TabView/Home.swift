@@ -60,7 +60,7 @@ struct Home: View {
                         ForEach(viewModel.filteredProducts) { product in
                             ProductCardView(product: product)
                                 .onTapGesture {
-                                    withAnimation {
+                                    withAnimation(.easeInOut) {
                                         shareData.detailProduct = product
                                         shareData.showDetailProduct = true
                                     }

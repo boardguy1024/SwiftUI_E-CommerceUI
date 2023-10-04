@@ -12,6 +12,8 @@ struct SearchView: View {
     var animation: Namespace.ID
     
     @EnvironmentObject var homeViewModel: HomeViewModel
+        
+    @EnvironmentObject var sharedData: SharedDataModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,6 +27,7 @@ struct SearchView: View {
                     }
                     // searchTextを初期化
                     homeViewModel.searchText = ""
+                    sharedData.fromSearchPage = false
                 } label: {
                     Image(systemName: "arrow.left")
                         .font(.title2)
@@ -86,10 +89,16 @@ struct SearchView: View {
                             StaggeredGrid(columns: 2, spacing: 20, list: products) { product in
                                 // CardView
                                 ProductCardView(product: product)
+                                    .onTapGesture {
+                                        withAnimation(.easeInOut) {
+                                            // showProductDetail
+                                            sharedData.fromSearchPage = true
+                                            sharedData.showDetailProduct = true
+                                            sharedData.detailProduct = product
+                                        }
+                                    }
                             }
                         }
-                        
-                        
                      
                     }
                     .padding()
@@ -111,6 +120,7 @@ struct SearchView: View {
             Image(product.productImage)
                 .resizable()
                 .scaledToFit()
+                .matchedGeometryEffect(id: "\(product.id)SEARCH", in: animation)
                 .frame(width: getRect().width / 3, height: getRect().width / 2.5)
                 
                 // 画像を上半分表示するため (-80分 .topPadding +80する必要がある)
