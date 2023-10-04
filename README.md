@@ -1,4 +1,4 @@
 # SwiftUI_E-CommerceUI
 #### ネイティブECアプリのような洗練されたUIを実装
 
-![gif]([https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODdhZGMxMGY5OWEyYWQyNjBmODE5N2Q1Yjk1ZjE0ZmE0YWQ2MGI4ZiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/8b2sULV9Z24O3gQABt/giphy.gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG10bmhvMzE5d2k2c2NvYjRmOWdwMjFmdXNwODNxZnJxczAwbms2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IBBl0lJr6YspcbbCrF/giphy.gif)https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG10bmhvMzE5d2k2c2NvYjRmOWdwMjFmdXNwODNxZnJxczAwbms2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IBBl0lJr6YspcbbCrF/giphy.gif)
+![gif](https://media.giphy.com/media/IBBl0lJr6YspcbbCrF/giphy.gif)
